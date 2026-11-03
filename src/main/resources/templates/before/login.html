@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>前台登录</title>
+</head>
+<body>
+<form th:action="@{/before/login}" method="post">
+    邮箱：<input type="text" name="bemail"><br>
+    密码：<input type="password" name="bpwd"><br>
+    验证码：<input type="text" name="validateCode">
+    <!-- 点击图片刷新验证码，加随机数防止缓存 -->
+    <img th:src="@{/validateCode}" id="mycode" onclick="this.src='@{/validateCode}?'+Math.random()">
+    <br>
+    <input type="submit" value="登录">
+</form>
+</body>
+</html>
